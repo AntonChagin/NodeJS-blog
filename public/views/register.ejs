@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+  <header>
+      <% include partials/header %>
+      <script src="../../javascripts/register.controller.js"></script>
+  </header>
+  <main>
+      <div class="well col-md-6 col-md-offset-3")>
+        <% if(typeof error == 'object' && error) { %>
+          <div class="alert alert-danger"><%= error %></div>
+          <% } %>
+          <form method="post" action="/register">
+            <div class="form-group">
+              <label >Name:</label>
+              <input type="text" class="form-control" name="username" required>
+            </div>
+            <div class="form-group">
+              <label>Email:</label>
+              <input type="email" class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+            </div>
+            <div class="form-group">
+              <label>Пароль:</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="form-group">
+              <label>Повторите пароль:</label>
+              <input type="text" class="form-control" name="repeat_password" required>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="form-control btn-primary" value="Зарегистрироваться">
+            </div>
+          </form>
+      </div>
+  </main>
+  <!--<div class="well row col-md-6 col-md-offset-3")>
+
+  </div> -->
+
+        <% include partials/footer %>
+
+  </body>
+  </html>
