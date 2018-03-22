@@ -45,11 +45,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
- //models.sequelize.sync().then(function() {
+ models.sequelize.sync().then(function() {
    app.listen(3000, function() {
      console.log('%s: Node server started on %s:%d ...',
          Date(Date.now() ), 3000);
    });
- //});
+ });
 
 module.exports = app;
